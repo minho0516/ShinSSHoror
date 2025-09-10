@@ -5,9 +5,21 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private FlashlightSystem shootingSystem;
     [SerializeField] private UIManager UIManager;
+    [SerializeField] private PlayerItemController itemController;
+    [SerializeField] private PlayerInventory inventory;
 
     void Update()
     {
+        itemController.CheckItemUseRay();
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if (itemController.GetAimingItem() != null)
+                inventory.TryGetItem(itemController.GetAimingItem());
+            else
+                inventory.TryGetItem(null);
+        }
+
         movement.Movement();
         movement.Rotate();
 

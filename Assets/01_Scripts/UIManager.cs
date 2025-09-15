@@ -5,10 +5,12 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Image SettingPanel;
+    public Image inventoryPanel;
     public Slider FovSlider;
     public Camera PlayerCamera;
 
     private bool isPanelOpen = false;
+    private bool isOpenInventoryPanel = false;
 
     public float MinFovValue = 60f;
     public float MaxFovValue = 120f;
@@ -32,10 +34,20 @@ public class UIManager : MonoBehaviour
             ToggleSettingPanel();
         }
 
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            ToggleInventoryPanel();
+        }
+
         PlayerCamera.fieldOfView = MinFovValue + (calcuratedValue * FovSlider.value);
     }
 
-    private void ToggleSettingPanel()
+    private void ToggleInventoryPanel()
+    {
+        inventoryPanel.gameObject.SetActive(isOpenInventoryPanel);
+        isOpenInventoryPanel = !isOpenInventoryPanel;
+    }
+private void ToggleSettingPanel()
     {
         isPanelOpen = !isPanelOpen;
         SettingPanel.gameObject.SetActive(isPanelOpen);
@@ -44,9 +56,11 @@ public class UIManager : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
         }
         else
         {
+            Time.timeScale = 1f;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -56,4 +70,6 @@ public class UIManager : MonoBehaviour
     {
         bulletText.text = txt;
     }
+
+    
 }

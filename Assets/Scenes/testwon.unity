@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 138223294}
   - component: {fileID: 138223297}
   - component: {fileID: 138223296}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EyeVIsual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,7 +1023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ba7ec430ecc3c0408145b284d88afd0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ba7ec430ecc3c0408145b284d88afd0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1236,12 +1236,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ba7ec430ecc3c0408145b284d88afd0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1868090645}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ba7ec430ecc3c0408145b284d88afd0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1868090647}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ba7ec430ecc3c0408145b284d88afd0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1868090646}
   m_SourcePrefab: {fileID: 100100000, guid: 0ba7ec430ecc3c0408145b284d88afd0, type: 3}
 --- !u!1 &264173729
 GameObject:
@@ -1330,7 +1324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 316004899}
   - component: {fileID: 316004900}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ShootingSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1372,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1695,7 +1689,7 @@ GameObject:
   - component: {fileID: 475451614}
   - component: {fileID: 475451616}
   - component: {fileID: 475451615}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2145,7 +2139,7 @@ GameObject:
   - component: {fileID: 606921890}
   - component: {fileID: 605594754}
   - component: {fileID: 604628546}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2885,7 +2879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 944557856}
   - component: {fileID: 944557857}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MovementSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3814,9 +3808,9 @@ GameObject:
   - component: {fileID: 1379960517}
   - component: {fileID: 1379960518}
   - component: {fileID: 1379960519}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4523,6 +4517,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1676991272}
+  - component: {fileID: 1676991276}
+  - component: {fileID: 1676991275}
+  - component: {fileID: 1676991274}
+  - component: {fileID: 1676991273}
   m_Layer: 0
   m_Name: Dragun
   m_TagString: Untagged
@@ -4546,6 +4544,85 @@ Transform:
   - {fileID: 1868090644}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1676991273
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676991271}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &1676991274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676991271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084eb7b487f82cb408c19df2f37c10c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 3
+  hp: 3
+  died: 0
+--- !u!114 &1676991275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676991271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ff4ef8bca80594e94434879c1c1c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animer: {fileID: 1868090645}
+  target: {fileID: 0}
+  dragunSpeed: 2
+  thingOfAttack: {fileID: 0}
+--- !u!65 &1676991276
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676991271}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.869823, y: 2.0736275, z: 1.5270022}
+  m_Center: {x: 0.042108808, y: 0.5368137, z: -0.48284975}
 --- !u!1 &1696663724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4729,36 +4806,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1868090646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868090642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 084eb7b487f82cb408c19df2f37c10c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 3
-  hp: 3
-  died: 0
---- !u!114 &1868090647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868090642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3ff4ef8bca80594e94434879c1c1c30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  dragunSpeed: 30
-  thingOfAttack: {fileID: 0}
 --- !u!1 &1969231069
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,7 +4817,7 @@ GameObject:
   - component: {fileID: 1969231070}
   - component: {fileID: 1969231073}
   - component: {fileID: 1969231071}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WeaponCam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -5000,7 +5047,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2162819528831740536}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: BulletHolder_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5032,7 +5079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1597758770329298757}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5130,7 +5177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1662070132595517273}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: LoadFlick_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5146,7 +5193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7585011253210253980}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5162,7 +5209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8834878406488452277}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: BulletEntrence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5179,7 +5226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8603321884197444444}
   - component: {fileID: 4628457173267265032}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5195,7 +5242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4338854244651313186}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: BulletEntrence_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5211,7 +5258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 388146704382712264}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5227,7 +5274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2922235198145085770}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Rifle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5259,7 +5306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9126686799543000246}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Loader_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5385,7 +5432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5713549792071175268}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5432,7 +5479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4183646605659810374}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: BulletHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5448,7 +5495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7682213457794824155}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: VintageRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5554,7 +5601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4668433166071455257}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: LoadFlick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5682,7 +5729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1557690999507516972}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Bolt_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5698,7 +5745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6080712896161430411}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Rifle_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5730,7 +5777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2162826645686963394}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Trigger_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}

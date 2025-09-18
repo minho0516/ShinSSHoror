@@ -8,7 +8,10 @@ public class InventorySlot : MonoBehaviour,
     IPointerExitHandler
 
 {
-    [SerializeField] private Item currentItem;
+    [SerializeField] private ItemDataSO currentItemDataSO;
+
+    [SerializeField] private Image itemDescriptionPanel;
+    [SerializeField] private TMP_Text itemDescripTXT;
     private int currentItemCount = 0;
 
     private TMP_Text itemCountTXT;
@@ -16,14 +19,16 @@ public class InventorySlot : MonoBehaviour,
 
     private void Awake()
     {
-        currentItem = null;
+        currentItemDataSO = null;
         slotEnvImage = GetComponent<Image>();
         itemCountTXT = GetComponentInChildren<TMP_Text>();
     }
 
     private void PushItem(Item item)
     {
-        currentItem = item;
+
+        Debug.Log(item);
+        currentItemDataSO = item.GetItemSO();
         GetItemToSetSlot();
         RefreshItemCountText();
     }
@@ -35,14 +40,14 @@ public class InventorySlot : MonoBehaviour,
 
     public bool CheckPushItem(Item item)
     {
-        if(currentItem == null)
+        if(currentItemDataSO == null)
         {
             PushItem(item);
             return true;
         }
         else
         {
-            if(currentItem.GetItemSO().type == item.GetItemSO().type)
+            if(currentItemDataSO.itemType == item.GetItemSO().itemType)
             {
                 Debug.Log("Same type item in this slot");
                 PushItem(item);
@@ -56,36 +61,48 @@ public class InventorySlot : MonoBehaviour,
         }
     }
 
-    public Item PullItem()
+    public ItemDataSO PullItem()
     {
-        if(currentItem == null)
+        if(currentItemDataSO == null)
         {
             Debug.Log("No item in this slot");
             return null;
         }
         else
         {
-            return currentItem;
+            return currentItemDataSO;
         }
     }
 
     public bool CheckCurrentItemIsNull()
     {
-        return currentItem == null;
+        return currentItemDataSO == null;
     }
 
     private void GetItemToSetSlot()
     {
-        slotEnvImage.sprite = currentItem.GetItemSO().itemIcon;
+        slotEnvImage.sprite = currentItemDataSO.itemIcon;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        string txt = null;
+        if (currentItemDataSO == null)
+        {
+            txt = "비어있음 like 내마음";
+        }
+        else
+        {
+            txt = currentItemDataSO.itemDescription;
+        }
+
+        PlayerInventory.Instance.SetDescriptionPanel(txt);
+
+        PlayerInventory.Instance.SetActiveDescPanel(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        
+        PlayerInventory.Instance.SetActiveDescPanel(false);
     }
 }

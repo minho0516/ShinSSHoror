@@ -82,6 +82,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Rotate()
     {
+        if (UIManager.Instance.IsPanelOpen()) return;
+
         float mouseX = Input.GetAxisRaw("Mouse X") * mouseSpeed * Time.deltaTime;
         float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSpeed * Time.deltaTime;
 

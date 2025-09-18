@@ -3,10 +3,11 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private PlayerMovement movement;
-    [SerializeField] private FlashlightSystem shootingSystem;
+    [SerializeField] private WeaponSystem shootingSystem;
     [SerializeField] private UIManager UIManager;
     [SerializeField] private PlayerItemController itemController;
     [SerializeField] private PlayerInventory inventory;
+    [SerializeField] private WeaponSystem weaponSystem;
 
     void Update()
     {
@@ -18,6 +19,11 @@ public class PlayerInput : MonoBehaviour
                 inventory.TryGetItem(itemController.GetAimingItem());
             else
                 inventory.TryGetItem(null);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            weaponSystem.ChangeWeaponInList();
         }
 
         movement.Movement();
@@ -35,13 +41,13 @@ public class PlayerInput : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            shootingSystem.InputShoot();
-            UIManager.UpdateBulletText(shootingSystem.GetAmmoText());
+            shootingSystem.WeaponShoot();
+            //UIManager.UpdateBulletText(shootingSystem.GetAmmoText());
         }
 
         if(Input.GetKeyDown(KeyCode.R))
         {
-            shootingSystem.InputReload();
+            shootingSystem.WeaponReload();
         }
 
         if(Input.GetKeyDown(KeyCode.LeftShift))

@@ -1,9 +1,12 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance;
+
     public Image SettingPanel;
     public Image inventoryPanel;
     public Slider FovSlider;
@@ -18,6 +21,7 @@ public class UIManager : MonoBehaviour
     private float calcuratedValue = 0;
 
     [SerializeField] private TMP_Text bulletText;
+    [SerializeField] private TMP_Text interactiveE;
 
     private void Awake()
     {
@@ -25,42 +29,47 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         calcuratedValue = MaxFovValue - MinFovValue;
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ToggleSettingPanel();
+            isPanelOpen = !isPanelOpen;
+            TogglePanel(SettingPanel, isPanelOpen);
         }
 
         if(Input.GetKeyDown(KeyCode.I))
         {
-            ToggleInventoryPanel();
+            isOpenInventoryPanel = !isOpenInventoryPanel;
+            TogglePanel(inventoryPanel, isOpenInventoryPanel);
         }
 
         PlayerCamera.fieldOfView = MinFovValue + (calcuratedValue * FovSlider.value);
     }
 
-    private void ToggleInventoryPanel()
-    {
-        inventoryPanel.gameObject.SetActive(isOpenInventoryPanel);
-        isOpenInventoryPanel = !isOpenInventoryPanel;
-    }
-private void ToggleSettingPanel()
-    {
-        isPanelOpen = !isPanelOpen;
-        SettingPanel.gameObject.SetActive(isPanelOpen);
+    public bool IsPanelOpen() => isPanelOpen || isOpenInventoryPanel;
 
-        if(isPanelOpen)
+    private void TogglePanel(Image panel, bool isPanel)
+    {
+        panel.gameObject.SetActive(isPanel);
+
+        if (isPanel)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0f;
         }
         else
         {
-            Time.timeScale = 1f;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -71,5 +80,8 @@ private void ToggleSettingPanel()
         bulletText.text = txt;
     }
 
-    
+    public void SetInterac(bool isActive)
+    {
+        interactiveE.gameObject.SetActive(isActive);
+    }
 }

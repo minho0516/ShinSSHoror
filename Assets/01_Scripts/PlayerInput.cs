@@ -17,6 +17,8 @@ public class PlayerInput : MonoBehaviour
         {
             if (itemController.GetAimingItem() != null)
                 inventory.TryGetItem(itemController.GetAimingItem());
+            else if (itemController.GetCraftingBox() != null)
+                UIManager.CallSetCraftingPanel(true);
             else
                 inventory.TryGetItem(null);
         }

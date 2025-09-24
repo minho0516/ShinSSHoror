@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,10 +8,11 @@ public class UIManager : MonoBehaviour
 
     public Image SettingPanel;
     public Image inventoryPanel;
+    public Image CraftingPanel;
+
     public Slider FovSlider;
     public Camera PlayerCamera;
 
-    private bool isPanelOpen = false;
     private bool isOpenInventoryPanel = false;
 
     public float MinFovValue = 60f;
@@ -44,8 +44,16 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isPanelOpen = !isPanelOpen;
-            TogglePanel(SettingPanel, isPanelOpen);
+            if(IsAllPanelIsClosed() == false)
+            {
+                TogglePanel(SettingPanel, true);
+                Debug.Log("AllPanelIsClosed");
+            }
+            else
+            {
+                Debug.Log("Else");
+                TryTurnOffPanel();
+            }
         }
 
         if(Input.GetKeyDown(KeyCode.I))
@@ -57,7 +65,7 @@ public class UIManager : MonoBehaviour
         PlayerCamera.fieldOfView = MinFovValue + (calcuratedValue * FovSlider.value);
     }
 
-    public bool IsPanelOpen() => isPanelOpen || isOpenInventoryPanel;
+    public bool IsPanelOpen() => SettingPanel.gameObject.activeSelf || isOpenInventoryPanel;
 
     private void TogglePanel(Image panel, bool isPanel)
     {
@@ -84,4 +92,30 @@ public class UIManager : MonoBehaviour
     {
         interactiveE.gameObject.SetActive(isActive);
     }
+
+    public void CallSetCraftingPanel(bool isActive)
+    {
+        CraftingPanel.gameObject.SetActive(isActive);
+    }
+
+    public void TryTurnOffPanel()
+    {
+        if(SettingPanel.gameObject.activeSelf)
+        {
+            SettingPanel.gameObject.SetActive(false);
+            return;
+        }
+        else if (inventoryPanel.gameObject.activeSelf)
+        {
+            inventoryPanel.gameObject.SetActive(false);
+            return;
+        }
+        else if (CraftingPanel.gameObject.activeSelf)
+        {
+            CraftingPanel.gameObject.SetActive(false);
+            return;
+        }
+    }
+
+    private bool IsAllPanelIsClosed() => SettingPanel.gameObject.activeSelf || inventoryPanel.gameObject.activeSelf || CraftingPanel.gameObject.activeSelf;
 }

@@ -28,6 +28,7 @@ public class Boss : MonoBehaviour
     {
         ri= GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
+        StartCoroutine(Battle());
     }
 
     void Update()

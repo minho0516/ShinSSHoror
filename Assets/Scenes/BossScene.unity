@@ -1595,71 +1595,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 6.6783535e-18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -92.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 3.0606453e-16
       objectReference: {fileID: 0}
     - target: {fileID: -8083769109484480269, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -36.138428
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: -6127768942768974169, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: -5245594413394399153, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 23.700256
+      value: 77.50004
       objectReference: {fileID: 0}
     - target: {fileID: -5245594413394399153, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -5245594413394399153, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -3743663890855721134, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 9.033175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_Name
       value: minhoball
       objectReference: {fileID: 0}
+    - target: {fileID: 1134969713397852485, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 3.1650116
+      objectReference: {fileID: 0}
     - target: {fileID: 4167280743394806330, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -9.960531
+      value: -68.73987
       objectReference: {fileID: 0}
     - target: {fileID: 4946337952660610218, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 18.06472
+      value: 1.2017717
       objectReference: {fileID: 0}
     - target: {fileID: 4946337952660610218, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 14.6947
       objectReference: {fileID: 0}
     - target: {fileID: 4946337952660610218, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -19.300041
       objectReference: {fileID: 0}
     - target: {fileID: 7030339539398650831, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -1.279501
+      value: 1.5660055
       objectReference: {fileID: 0}
     - target: {fileID: 7030339539398650831, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -16.772045
       objectReference: {fileID: 0}
     - target: {fileID: 7030339539398650831, guid: 8cd6665cddc452b428994dfd191e8144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 20.593273
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3071,7 +3075,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!4 &1376227039
 Transform:
@@ -3101,9 +3105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c10a478294f6f5499d654072ddb4719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animer: {fileID: 0}
+  animer: {fileID: 1389428336}
   player: {fileID: 0}
-  bossSpeed: 17
+  bossSpeed: 5
   bossHp: 10
   canHit: 0
   bigBall: {fileID: 7421908033522644347}

@@ -21,14 +21,14 @@ public class WeaponSystem : MonoBehaviour
         if(weaponSlotList != null)
         {
             weaponSlotList.Clear();
-        }
 
-        foreach(Transform child in slotParentTrm)
-        {
-            WeaponSlot slot = child.GetComponent<WeaponSlot>();
-            if (slot != null)
+            foreach (Transform child in slotParentTrm)
             {
-                weaponSlotList.Add(slot);
+                WeaponSlot slot = child.GetComponent<WeaponSlot>();
+                if (slot != null)
+                {
+                    weaponSlotList.Add(slot);
+                }
             }
         }
     }
